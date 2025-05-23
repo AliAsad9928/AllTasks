@@ -1,0 +1,96 @@
+import java.util.Scanner;
+public class DayOfWeek {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number (1-7) to get the corresponding day of the week: ");
+        int dayNumber = scanner.nextInt();
+        String dayName;
+        boolean isWeekend = false;
+        switch (dayNumber) {
+            case 1:
+                dayName = "Monday";
+                break;
+            case 2:
+                dayName = "Tuesday";
+                break;
+            case 3:
+                dayName = "Wednesday";
+                break;
+            case 4:
+                dayName = "Thursday";
+                break;
+            case 5:
+                dayName = "Friday";
+                break;
+            case 6:
+                dayName = "Saturday";
+                isWeekend = true;
+                break;
+            case 7:
+                dayName = "Sunday";
+                isWeekend = true;
+                break;
+            default:
+                dayName = "Invalid input";
+        }
+        if (dayNumber >= 1 && dayNumber <= 7) {
+            System.out.println("The day is: " + dayName);
+            if (isWeekend) {
+                System.out.println(dayName + " is a Weekend.");
+            } else {
+                System.out.println(dayName + " is a Weekday.");
+            }
+        } else {
+            System.out.println(dayName);
+        }
+        scanner.close();
+    }
+}
+
+
+public class ArrayExample {
+    public static void main(String[] args) {
+        int[] numbers = {10, 20, 30, 40, 50};
+        System.out.println("Array elements:");
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println("Element at index " + i + ": " + numbers[i]);
+        }
+        int sum = 0;
+        for (int num : numbers) {
+            sum += num;
+        }
+        double average = (double) sum / numbers.length;
+        System.out.println("The average of array elements is: " + average);
+    }
+}
+
+
+import java.util.Scanner;
+public class TwoDimensionalArray {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[][] table_data = new int[3][3]; 
+        System.out.println("Enter 9 numbers for the 3x3 table:");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print("Enter value for table_data[" + i + "][" + j + "]: ");
+                table_data[i][j] = scanner.nextInt();
+            }
+        }
+        System.out.println("\nOriginal Table Data:");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(table_data[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("\nReversed Table Data:");
+        for (int i = 2; i >= 0; i--) {
+            for (int j = 2; j >= 0; j--) {
+                System.out.print(table_data[i][j] + " ");
+            }
+            System.out.println();
+        } 
+        scanner.close();
+    }
+}
